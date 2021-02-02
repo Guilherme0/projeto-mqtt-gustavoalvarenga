@@ -20,6 +20,10 @@ void  loop () {
   estado_sensor = digitalRead (pino2); // Efetua a leitura do Pino 2 e armazena o valor discriminado na variável
 
   Serial. println (estado_sensor); // Não exibe Serial do Monitor o Estado do Sensor
+    
+    
 }
-Serial. println( "");
+
+
+
 
