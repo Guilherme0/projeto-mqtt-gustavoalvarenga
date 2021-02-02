@@ -24,3 +24,5 @@ Circuito
 
 
 Autor: Gustavo Alvarenga de França
+Linkedin(https://www.linkedin.com/in/gustavo-alvarenga-1b6a381b7/)
+Gmail(guhalvarenga@gmail.com)
