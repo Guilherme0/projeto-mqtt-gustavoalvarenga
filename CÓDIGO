@@ -1,0 +1,17 @@
+int pino2 = 2 ; // Cria uma variável para o Pino 2
+bool estado_sensor; // Cria uma variável para armazenar o estado do sensor
+
+
+void  setup () {
+
+  pinMode (pino2, INPUT_PULLUP); // Coloca o Pino 2 como Entrada
+  Serial. começar ( 9600 ); // Inicia o Monitor Serial
+}
+
+void  loop () {
+  
+  estado_sensor = digitalRead (pino2); // Efetua a leitura do Pino 2 e armazena o valor discriminado na variável
+
+  Serial. println (estado_sensor); // Não exibe Serial do Monitor o Estado do Sensor
+  
+}
