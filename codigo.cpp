@@ -21,4 +21,5 @@ void  loop () {
 
   Serial. println (estado_sensor); // Não exibe Serial do Monitor o Estado do Sensor
 }
-Serial.println
+Serial. println( "");
+
