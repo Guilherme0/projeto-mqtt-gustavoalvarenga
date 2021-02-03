@@ -57,14 +57,14 @@ void loop() {
 
   Serial.println(estado_sensor); //Exibe no Monitor Serial o Estado do Sensor
 
-  if(estado_sensor == 1){
+  if(estado_sensor == 0){
   Serial.print("O RACK ESTÁ FECHADO!");
   Serial.println("");
   mqttClient.connect("gustavoa");
 mensagem = mqttClient.publish("gustavoa-t","FECHADO!");
     Serial.println(mensagem);
 }
- if(estado_sensor == 0){
+ if(estado_sensor == 1){
   Serial.print("O RACK ESTÁ ABERTO!");
   Serial.println("");
   mqttClient.connect("gustavoa");
