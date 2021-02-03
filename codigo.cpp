@@ -1,29 +1,39 @@
-/ *
-    Nesse programa vamos programa ou Arduino para efetuar a leitura de um Sensor Magnético.
-    Quando o sensor estiver fechado, ele vai enviar um Sinal de '1' para o Pino 2, quando ela estiver fechado, ele vai mandar um sinal de '0' no Pino 2.
-    O Programa vai exibir nenhum Monitor Serial ou estado do Sensor.
- 
- * /
+#include <UIPEthernet.h>
+#include <utility/logging.h>
 
-int pino2 = 2 ; // Cria uma variável para o Pino 2
-bool estado_sensor; // Cria uma variável para armazenar o estado do sensor
+#include <SPI.h>
 
 
-void  setup () {
+//Define o endereço MAC que será utilizado
+byte mac[] = {0x44, 0x6E, 0x0F, 0x7F, 0xA4, 0xFE};
 
-  pinMode (pino2, INPUT_PULLUP); // Coloca o Pino 2 como Entrada
-  Serial. começar ( 9600 ); // Inicia o Monitor Serial
+//Inicia o cliente Ethernet
+EthernetClient client;
+
+void setup() {
+    //Inicia o controlador Ethernet e solicita um IP para o servidor de DHCP
+    Ethernet.begin(mac);
+
+    //Inicia o monitor Serial
+    Serial.begin(9600);
+
+    //Exibe no Monitor Serial as informações sobre o IP do Arduino
+    Serial.print("O IP do Arduino e: ");
+    Serial.println(Ethernet.localIP());
+
+    //Exibe no Monitor Serial as informações sobre a Máscara de Rede do Arduino
+    Serial.print("A Mascara de Rede do Arduino e: ");
+    Serial.println(Ethernet.subnetMask());
+
+    //Exibe no Monitor Serial as informações sobre o Gateway do Arduino
+    Serial.print("O Gateway do Arduino e: ");
+    Serial.println(Ethernet.gatewayIP());
+
+    //Exibe uma linha em branco
+    Serial.println("");
+
 }
 
-void  loop () {
-  
-  estado_sensor = digitalRead (pino2); // Efetua a leitura do Pino 2 e armazena o valor discriminado na variável
-
-  Serial. println (estado_sensor); // Não exibe Serial do Monitor o Estado do Sensor
-    
+void loop() {
     
 }
-
-
-
-
